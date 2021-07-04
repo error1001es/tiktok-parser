@@ -50,13 +50,13 @@ async function initialize() {
                     diggCounts.push(videos[i].diggCount)
                 }
 
-                row['Изменение просмотры'] = average(playCounts) - row['Средние просмотры']
+                row['Изменение просмотры'] = average(playCounts) - parseInt(row['Средние просмотры'])
                 row['Средние просмотры'] = average(playCounts)
 
-                row['Изменение лайки'] = average(diggCounts) - row['Средние лайки']
+                row['Изменение лайки'] = average(diggCounts) - parseInt(row['Средние лайки'])
                 row['Средние лайки'] = average(diggCounts)
 
-                row['Изменение репосты'] = average(shareCounts) - row['Средние репосты']
+                row['Изменение репосты'] = average(shareCounts) - parseInt(row['Средние репосты'])
                 row['Средние репосты'] = average(shareCounts)
             }else{
                 row['Ссылка на \nаккаунт \nTik-Tok'] = 'Аккаунт не найден'
