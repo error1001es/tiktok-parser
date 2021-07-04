@@ -50,13 +50,13 @@ async function initialize() {
                     diggCounts.push(videos[i].diggCount)
                 }
 
-                row['Изменение просмотры'] = average(playCounts) - parseInt(row['Средние просмотры'].split(' ').join(''))
+                row['Изменение просмотры'] = average(playCounts) - +row['Средние просмотры'].replace(/\D+/g,'')
                 row['Средние просмотры'] = average(playCounts)
 
-                row['Изменение лайки'] = average(diggCounts) - parseInt(row['Средние лайки'].split(' ').join(''))
+                row['Изменение лайки'] = average(diggCounts) - +row['Средние лайки'].replace(/\D+/g,'')
                 row['Средние лайки'] = average(diggCounts)
 
-                row['Изменение репосты'] = average(shareCounts) - parseInt(row['Средние репосты'].split(' ').join(''))
+                row['Изменение репосты'] = average(shareCounts) - +row['Средние репосты'].replace(/\D+/g,'')
                 row['Средние репосты'] = average(shareCounts)
             }else{
                 row['Ссылка на \nаккаунт \nTik-Tok'] = 'Аккаунт не найден'
